@@ -16,3 +16,5 @@ __Promise States__
 * Pending
 * Fulfilled - when fulfilled it will return a single value
 * Rejected - returns a reason why it was rejected
+
+__*Always remember to return a promise when chaining .then()*__
