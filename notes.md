@@ -41,3 +41,33 @@ __Promise.race()__
 * will return whenever the first promise *settles*
   * if the first promise fails, it will call the catch function and you won't get your data
 * not a lot of use cases but just be aware of it
+
+
+## Async / Await: Syntactic sugar for promises
+* excels at turning asynchronous code into sequentially executed code
+
+__Aysnc:__ designates that a function is asynchronous and is used when a function is defined
+* whatever your function returns will be wrapped in a promise
+
+```javascript
+async function getNames() {}
+// or
+const getNames = async () => {}
+```
+
+__Await:__ pauses the execution of an asynchronous function while it waits for the promise to be fulfilled
+* only used inside of an async function or you will get an error
+* only blocks the current function (see below)
+
+```javascript
+const getNames = async () => {
+  await someFunc();
+  // doSomethingElse will "await" someFunc();
+  doSomethingElse();
+}
+
+getNames();
+// getAddresses will not await getNames
+getAddresses();
+```
+

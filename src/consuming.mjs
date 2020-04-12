@@ -18,7 +18,7 @@ export function getCatch() {
 export function chain() {
   axios.get('http://localhost:3000/orders/1')
   .then(({data}) => {
-    // remember to RETURN the promise in each then!!
+    // remember to RETURN the promise in each .then!!
     return axios.get(`http://localhost:3000/addresses/${data.shippingAddress}`)
   }).then(({data}) => {
     setText(`City: ${data.city}`);
